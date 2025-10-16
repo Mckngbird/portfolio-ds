@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-inter: system-ui, sans-serif; /* valor por defecto */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 🔮 Movimiento de flotación */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-25px) translateX(15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* 🌈 Cambio de color galaxia */
+@keyframes galaxy {
+  0% {
+    background-color: #06b6d4;
+    box-shadow: 0 0 8px #06b6d4;
+  }
+  25% {
+    background-color: #a855f7;
+    box-shadow: 0 0 8px #a855f7;
+  }
+  50% {
+    background-color: #ec4899;
+    box-shadow: 0 0 8px #ec4899;
+  }
+  75% {
+    background-color: #6366f1;
+    box-shadow: 0 0 8px #6366f1;
+  }
+  100% {
+    background-color: #06b6d4;
+    box-shadow: 0 0 8px #06b6d4;
+  }
+}
+
+/* 🌠 Brillo intermitente */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* 🌀 Combinación final: movimiento + color + parpadeo */
+.animate-float-galaxy {
+  animation:
+    float 14s linear infinite,
+    galaxy 6s ease-in-out infinite alternate,
+    twinkle 3s ease-in-out infinite alternate;
 }
