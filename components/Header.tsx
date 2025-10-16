@@ -36,7 +36,7 @@ export default function Header() {
             isScrolled ? "text-cyan-400" : "text-cyan-300"
           }`}
         >
-          Data Scientist
+          José Rivera Medina
         </span>
 
         {/* Navegación */}
